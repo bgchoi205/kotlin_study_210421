@@ -29,9 +29,8 @@ fun main(){
 
     loop@ while (true) {
         print("명령어) ")
-        val command = readLineTrim()
 
-        when (command) {
+        when (val command = readLineTrim()) {
             "system exit" -> {
                 println("프로그램을 종료합니다.")
                 break@loop
@@ -52,10 +51,10 @@ fun main(){
                 articlesLastId = id
             }
             "article list" -> {
-                println("번호 / 제목 / 날짜")
+                println("번호 / 작성날짜 / 제목")
 
                 for ( article in articles ) {
-                    println("${article.id} / ${article.title} / ${article.regDate}")
+                    println("${article.id}/ ${article.regDate} / ${article.title} ")
                 }
             }
             "article delete" -> {
